@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Biglietto treno form</title>
+</head>
+<body>
+    
+    <form>
+
+        <label for="name">Nome e Cognome</label>
+        <input type="text" id="name"/>
+
+        <label for="km">Inserisca i km da percorrere</label>
+        <input type="text" id="km"/>
+
+        <label for="age-select">Seleziona qualcosa:</label>
+        <select id="age-select">
+            <option value="minorenne">Minorenne</option>
+            <option value="adulto">Over 65</option>
+            <option value="altro">altro</option>
+        </select>
+    </form>
+
+
+    <button id="readForm">Crea biglietto</button>
+
+    <button id="resetForm">Cancella dati</button>
+
+
+
+    <div>
+        <h1 id="ticket-name"></h1>
+        <h2 id="tickeet-prize"></h2>
+        <h2 id="ticket-discount"></h2>
+    </div>
+
+
+   <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
