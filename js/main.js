@@ -1,48 +1,54 @@
-const buttonCreate = document.querySelector('#leggiForm');
-const buttonReset = document.querySelector('resetForm');
+const buttonCreate = document.querySelector('#readForm');
+const buttonReset = document.querySelector('#resetForm');
 
-const nameUser = document.querySelector('#name');
-const kmToDo = document.querySelector('#km');
-const ageUser = document.querySelector('#age-select');
+let nameUser = document.querySelector('#name');
+let kmToDo = document.querySelector('#km')
 
-const ticketName = document.querySelector('ticket-name');
-const ticketPrize = document.querySelector('tickeet-prize');
-const ticketDiscount = document.querySelector('ticket-discount');
+const ticketName = document.querySelector('#ticket-name');
+let ticketPrize = document.querySelector('#ticket-prize');
+const ticketDiscount = document.querySelector('#ticket-discount');
+
+const ticket = document.querySelector('#ticket');
+
+let carriage = document.querySelector('#carriage');
+let trainNumber = document.querySelector('#train-number');
 
 buttonCreate.addEventListener('click', 
     function () {
 
+        let ageUser = document.querySelector('#age-select').value;
+        let kmToDo = document.querySelector('#km').value;
+        let ticketCost = (kmToDo * 0.21);
         ticketName.innerHTML = nameUser.value;
+        ticket.className = "d-block";
         
+        carriage.innerHTML = Math.floor((Math.random() * 9)) + 1;  
+        trainNumber.innerHTML = Math.floor((Math.random() * 90000)) + 10000;     
 
-        const casellaSelezioneDom = document.getElementById('casellaSelezione');
-        alert(casellaSelezioneDom.value);
+        
+        if (ageUser == 'minorenne'){
+        
+            ticketCost =  ticketCost + ((ticketCost / 100) * 20);
+            ticketDiscount.innerHTML = 'Sconto Silver';
+            
+        }else if (ageUser == 'adulto'){
+        
+            ticketCost = ticketCost + ((ticketCost / 100) * 40);
+            ticketDiscount.innerHTML = 'Sconto Premium';
+        
+        }else{
+            ticketDiscount.innerHTML = 'Nessuno sconto';
+        }
+
+        ticketCost = ticketCost.toFixed(2);
+        ticketPrize.innerHTML = ticketCost +'€';
     }
 );
 
-
-
-
-
-
-
-// const travelDistance = parseInt (prompt('Gentilmente inserisca il numero di chilometri della sua corsa'));
-// console.log(travelDistance);
-
-// let ticketCost = (travelDistance * 0.21);
-// console.log(ticketCost);
-
-// if (ageUser < 18){
-//     ticketCost =  ticketCost + ((ticketCost / 100) * 20);
-//     document.getElementById('sconto').innerHTML = 'Complimenti per essere così giovane, le abbiamo applicato uno sconto del 20%';
-// }else if (ageUser > 65){
-//     ticketCost = ticketCost + ((ticketCost / 100) * 40);
-//     document.getElementById('sconto').innerHTML = 'Complimenti per essere così grande ed avere ancora la pazienza di utilizzare i nostri servizi, le abbiamo applicato uno sconto del 40%';
-// }
-
-// console.log(ticketCost);
-
-// ticketCost = ticketCost.toFixed(2);
-// console.log(ticketCost);
-
-// document.getElementById('prezzo').innerHTML= 'Il prezzo del biglietto è di: ' + ticketCost + ' € ' ;
+buttonReset.addEventListener('click', 
+    function() {
+        nameUser.value = "";
+        kmToDo.value = "";
+        ticket.className = "d-none";
+    }
+);
