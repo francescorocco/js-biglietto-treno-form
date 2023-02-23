@@ -4,10 +4,195 @@
     box-sizing: border-box;
 }
 
+body{
+    font-family: sans-serif;
+    background-color: rgb(111, 18, 18);
+}
+
 .d-none{
     display: none;
 }
 
 .d-block{
     display: block;
+}
+
+form{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2rem;
+    border-radius: 30px;
+    background: #e0e0e0;
+    box-shadow: 15px 15px 30px #bebebe,
+             -15px -15px 30px #ffffff;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.input {
+    margin: 30px;
+    background: none;
+    border: none;
+    outline: none;
+    max-width: 190px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 9999px;
+    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+    color: #c80000;
+  }
+
+select.input{
+    max-width: 300px;
+}
+
+input#name {
+    font-size: 2rem;
+}
+
+input#km {
+    font-size: 2rem;
+}
+
+select#age-select {
+    font-size: 2rem;
+}
+
+.bottoni{
+   display: flex;
+   justify-content: center;
+}
+
+button {
+    transform: rotate(-25deg) skew(25deg);
+    transform-style: preserve-3d;
+    position: relative;
+    list-style: none;
+    width: 125px;
+    height: 60px;
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    margin: 50px;
+   }
+   
+   button:before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: -5px;
+    width: 100%;
+    height: 10px;
+    background: #2a2a2a;
+    transform: skewX(-41deg);
+   }
+   
+   button:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: -9px;
+    width: 9px;
+    height: 100%;
+    background: #2a2a2a;
+    transform: skewY(-49deg);
+   }
+   
+   button span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #2a2a2a;
+    color: #fff;
+    font-size: 25px;
+    transition: 1.1s ease-out;
+   }
+   
+   button:hover span {
+    z-index: 1000;
+    transition: .3s;
+    color: #fff;
+   }
+   
+   button:hover span:nth-child(5) {
+    transform: translate(40px, -40px);
+    opacity: 1;
+   }
+   
+   button:hover span:nth-child(4) {
+    transform: translate(30px, -30px);
+    opacity: .8;
+   }
+   
+   button:hover span:nth-child(3) {
+    transform: translate(20px, -20px);
+    opacity: .6;
+   }
+   
+   button:hover span:nth-child(2) {
+    transform: translate(10px, -10px);
+    opacity: .4;
+   }
+   
+   button:hover span:nth-child(1) {
+    transform: translate(0px, 0px);
+    opacity: .2;
+   }
+   
+   button:active span:nth-child(5) {
+    transform: translate(20px, -20px);
+    opacity: 1;
+   }
+   
+   button:active span:nth-child(4) {
+    transform: translate(15px, -15px);
+   }
+   
+   button:active span:nth-child(3) {
+    transform: translate(10px, -10px);
+   }
+   
+   button:active span:nth-child(2) {
+    transform: translate(5px, -5px);
+   }
+   
+   button:active span:nth-child(1) {
+    transform: translate(0px, 0px);
+   }
+   
+   button:nth-child(1):hover span {
+    background: #52E19F;
+   }
+
+#ticket{
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 70%;
+    margin: 0 auto;
+}
+
+
+#left-ticket{
+    background-color: lightslategrey;
+    font-size: 1.5rem;
+
+}
+
+#left-ticket h2{
+    padding: 10px;
+    text-align: center;
+}
+
+#right-ticket{
+    width: 70%;
+    display: flex;
+    justify-content:space-between;
+}
+
+#right-ticket h2{
+    text-align: center;
 }

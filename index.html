@@ -8,36 +8,82 @@
     <title>Biglietto treno form</title>
 </head>
 <body>
+    <header>
+        <form>
+
+            <div>
+                <label for="name">Nome e Cognome</label>
+                <input type="text" id="name" class="input"/>
+            </div>
+
+            <div>
+                <label for="km">Inserisca i km da percorrere</label>
+                <input type="text" id="km" class="input"/>
+            </div>
+            
+            <div>
+                <label for="age-select">Seleziona la tua fascia di età:</label>
+                <select id="age-select" class="input">
+                    <option value="minorenne">Minorenne</option>
+                    <option value="adulto">Over 65</option>
+                    <option value="altro">altro</option>
+                </select>
+            </div>
+
+        </form>
+    </header>
+
+    <div class="bottoni">
+        <button>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span id="readForm">Crea biglietto</span>
+          </button>
+        <!-- <button id="readForm">Crea biglietto</button> -->
+        
+        <button>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span id="resetForm">Cancella dati</span>
+          </button>
+        
+    </div>
+
+
+
     
-    <form>
-
-        <label for="name">Nome e Cognome</label>
-        <input type="text" id="name"/>
-
-        <label for="km">Inserisca i km da percorrere</label>
-        <input type="text" id="km"/>
-
-        <label for="age-select">Seleziona la tua fascia di età:</label>
-        <select id="age-select">
-            <option value="minorenne">Minorenne</option>
-            <option value="adulto">Over 65</option>
-            <option value="altro">altro</option>
-        </select>
-    </form>
-
-
-    <button id="readForm">Crea biglietto</button>
-
-    <button id="resetForm">Cancella dati</button>
-
-
-
     <div class="d-none" id="ticket">
-        <h1 id="ticket-name"></h1>
-        <h2 id="ticket-discount"></h2>
-        <h2 id="carriage"></h2>
-        <h2 id="train-number"></h2>
-        <h2 id="ticket-prize"></h2>
+        <div id="left-ticket">
+            <h2>Dettagli Passeggeri</h2>
+            <h2>Nome Passeggero</h2>
+            <h2 id="ticket-name"></h2>
+        </div>
+
+        <div id="right-ticket">
+            <div>
+                <h2>Sconto applicato</h2>
+                <h2 id="ticket-discount"></h2>
+            </div>
+
+            <div>
+                <h2>Carrozza</h2>
+                <h2 id="carriage"></h2>
+            </div>
+
+            <div>
+                <h2>Numero treno</h2>
+                <h2 id="train-number"></h2>
+            </div>
+
+            <div>
+                <h2>Prezzo biglietto</h2>
+                <h2 id="ticket-prize"></h2>
+            </div>
+        </div>
     </div>
 
 
